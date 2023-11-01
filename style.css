@@ -1,0 +1,11 @@
+html,body{
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    
+}
+ .m-w-20{
+    max-width: 12vw;
+    padding: 20px;
+    width: 55px;
+}

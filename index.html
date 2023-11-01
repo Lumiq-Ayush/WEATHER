@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+        integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Weather</title>
+</head>
+
+
+<body>
+
+    <div class="box">
+        <div class="wave -one"></div>
+        <div class="wave -two"></div>
+        <div class="wave -three"></div>
+        <div id="weathercon m-w-20">
+            <i class="fas fa-sun" style="color: yellow"></i>
+        </div>
+    </div>
+    <div class="info">
+        <h2 class="location"><i class="fas fa-street-view"></i>{%location%}, {%country%}</h2>
+        <p id="date">WED | OCT 23 |10:44AM </p>
+        <h1 class="temp">{%tempval%}</h1>
+        <h3 class="tempmin_max">Min {%tempmin%} | Max {%tempmax%}</h3>
+    </div>
+    </div>
+- 
+     <script>
+
+        const curDate = document.getElementById("date");
+        let weathercon = document.getElementById("weathercon")
+        const tempStatus = "Clouds";
+        const getCurrentDay = () => {
+            const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+
+            let currenttime = new Date();
+            let day = weekday[currenttime.getDay()];
+            return day
+
+        }
+
+        const getCurrentTime = () => {
+            var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            var now = new Date();
+            var month = months[now.getMonth()];
+            var date = now.getDate();
+            let hours = now.getHours();
+            let mins = now.getMinutes();
+
+            return `${month} ${date} | ${hours}:${mins}`;
+
+        }
+
+        curDate.innerHTML = getCurrentDay() + " | " + getCurrentTime();
+    </script>
+    <script src="scrit.js"></script>
+   
+
+</body>
+
+</html>
